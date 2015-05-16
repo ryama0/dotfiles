@@ -1,0 +1,17 @@
+" ブラウザタイトルの変更
+" Firefox デフォルトは 「Mozilla - Firefox」、vimperatorを入れると「vimperator」
+set titlestring=Firefox
+
+" 詳細表示レベル？ 内容確認中、左下のステータス状況か？
+" →「:javascript! 」で表示される内容レベル
+set verbose=9
+
+" j/k でのスクロール幅を 1行 から 3行 に変更
+map j 3<C-e>
+map k 3<C-y>
+
+" Backspace に戻るを割り当て
+map <BS> <A-Left>
+
+" はてブ
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
