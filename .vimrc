@@ -64,7 +64,6 @@ if has('vim_starting')
         NeoBundleFetch 'Shougo/neobundle.vim'
     endif
 endif
-"NeoBundle 'Shougo/neobundle.vim'
 
 "非同期処理のため
 NeoBundle 'Shougo/vimproc',{
@@ -76,6 +75,9 @@ NeoBundle 'Shougo/vimproc',{
     \ }
 "vimからシェルを起動する
 NeoBundle 'Shougo/vimshell'
+"explrer
+NeoBundle 'Shougo/vimfiler.vim'
+let g:vimfiler_as_default_explorer = 1
 "vim上で使用できる統合ユーザーインターフェース
 NeoBundle 'Shougo/unite.vim'
 "unite.vim の設定
@@ -255,6 +257,67 @@ let g:syntastic_cpp_check_header=1
 let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 "ステータスライン
 NeoBundle 'itchyny/lightline.vim'
+let g:lightline = {
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'MyModified',
+        \   'readonly': 'MyReadonly',
+        \   'fugitive': 'MyFugitive',
+        \   'filename': 'MyFilename',
+        \   'fileformat': 'MyFileformat',
+        \   'filetype': 'MyFiletype',
+        \   'fileencoding': 'MyFileencoding',
+        \   'mode': 'MyMode'
+        \ },
+        \ 'component_expand': {
+        \   'syntastic': 'SyntasticStatuslineFlat',
+        \ },
+        \ 'component_type': {
+        \   'syntastic': 'error',
+        \ }
+        \ }
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '[ReadOnly]' : ''
+endfunction
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
+
 "HTMLタグなどの囲まれているもの編集補助
 NeoBundle 'surround.vim'
 "Ruby
@@ -453,8 +516,6 @@ set autoindent
 filetype plugin indent on
 filetype indent on
 set nocindent
-"ステータスラインの設定
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 "ステータス行を常に表示
 set laststatus=2
 "入力したコマンドを表示
