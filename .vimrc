@@ -259,7 +259,7 @@ let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 NeoBundle 'itchyny/lightline.vim'
 let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
-        \ 'colorscheme': 'solarized',
+        \ 'colorscheme': 'Tomorrow_Night',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
         \ },
