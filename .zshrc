@@ -81,10 +81,21 @@ if [ ${UID} -eq 0 ]; then
   tmp_sprompt="%B%U${tmp_sprompt}%u%b"
 fi
 
+
 PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+
+### Gitの情報を表示
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 ### SSHログイン時のプロンプト
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
@@ -96,6 +107,7 @@ case "${TERM}" in
 kterm*|xterm*)
   precmd() {
     echo -ne "\033]0;${USER}@${HOST%%.*}\007"
+    vcs_info
   }
   ;;
 esac
