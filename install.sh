@@ -15,5 +15,5 @@ mkdir -p ~/.vim/bundle
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 #dict
-mkdir -p ~/.vim/dict
-cp ./dict/* ~/.vim/dict/
+ln -s $DOTFILES_PATH/dict ~/.vim/dict
+
