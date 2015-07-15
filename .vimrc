@@ -494,11 +494,17 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 nmap <Space>j <Plug>(quickhl-cword-toggle)
 nmap <Space>] <Plug>(quickhl-tag-toggle)
 map H <Plug>(operator-quickhl-manual-this-motion)
-let g:quickhl_cword_enable_at_startup = 1 "初期化
 "capture.vim キーバインド確認
 NeoBundle 'tyru/capture.vim'
 "コメントアウト
 NeoBundle 'tyru/caw.vim'
+" git用プラグイン
+NeoBundle 'rhysd/committia.vim'
+let g:committia_hooks = {}
+function! g:committia_hooks.edit_open(info)
+    " Additional settings
+    setlocal spell
+endfunction
 
 "NeoBundle末尾
 call neobundle#end()
