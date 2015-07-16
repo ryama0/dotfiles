@@ -9,6 +9,7 @@ ln -s $DOTFILES_PATH/.tmux.conf ~/.tmux.conf
 ln -s $DOTFILES_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
 ln -s $DOTFILES_PATH/.zshrc ~/.zshrc
+ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
 
 #neobunlde
 mkdir -p ~/.vim/bundle
