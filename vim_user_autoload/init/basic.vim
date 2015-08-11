@@ -18,7 +18,7 @@ set number
 "バックスペースを使えるように
 set backspace=start,eol,indent
 "カーソル行の背景色を変更
-"set cursorline
+set cursorline
 "カーソル位置のカラムの背景色を変更
 "set cursorcolumn
 "不可視文字を表示
@@ -48,15 +48,6 @@ set noundofile
 "*~を作らない
 set nobackup
 
-" コメントアウトを切り替えるマッピング
-" \c でカーソル行をコメントアウト
-" 再度 \c でコメントアウトを解除
-" 選択してから複数行の \c も可能
-nmap \c <Plug>(caw:I:toggle)
-vmap \c <Plug>(caw:I:toggle)
-" \C でコメントアウトの解除
-nmap \C <Plug>(caw:I:uncomment)
-vmap \C <Plug>(caw:I:uncomment)
 "新しい行のインデントを同じ行にする
 set autoindent
 filetype plugin indent on
@@ -74,3 +65,4 @@ let ruby_space_error=1
 "Auto Open quickfix-window
 autocmd QuickFixCmdPost *grep* cwindow
 
+let g:tex_flavor='latex'
