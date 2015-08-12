@@ -13,6 +13,7 @@ ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
 
 #neobunlde
 mkdir -p ~/.vim/bundle
+ln -s $DOTFILES_PATH/vim_user_autoload ~/.vim/user_autoload
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 #dict
