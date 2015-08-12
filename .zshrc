@@ -140,6 +140,15 @@ case ${OSTYPE} in
         ;;
 esac
 
+### linuxbrew
+function set_linuxbrew() {
+    if [ -e $HOME/.linuxbrew/ ]; then
+        export PATH="$HOME/.linuxbrew/bin:$PATH"
+        export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+        export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+    fi
+}
+
 ### Linuxディストリ判定
 function get_linux_distribution() {
     local distri_name=""
@@ -168,6 +177,7 @@ case ${OSTYPE} in
         ;;
     linux*)
         distri_name=`get_linux_distribution`
+        set_linuxbrew
         case ${distri_name} in
             Ubuntu)
                 alias system-upgrade='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
