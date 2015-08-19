@@ -128,6 +128,9 @@ NeoBundle 'tyru/caw.vim'
 " git用プラグイン
 NeoBundle 'rhysd/committia.vim'
 
+" LifeLog
+NeoBundle 'wakatime/vim-wakatime'
+
 call neobundle#end()
 
 filetype plugin indent on
