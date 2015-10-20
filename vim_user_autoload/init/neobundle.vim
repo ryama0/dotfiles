@@ -43,6 +43,8 @@ else
     NeoBundle 'Shougo/neocomplcache.vim'
 endif
 
+NeoBundle 'Shougo/neoinclude.vim'
+
 "スニペット入力サポート
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -91,8 +93,16 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
     \ 'autoload' : {'filetypes' : 'cpp'}
     \ }
 
+"vim-marching
 if executable('clang')
   NeoBundle "osyo-manga/vim-marching"
+  let g:enable_marching=1
+endif
+
+"clang_complete
+if executable('clang')
+  "NeoBundle 'Rip-Rip/clang_complete'
+  "let g:enable_clang_complete=1
 endif
 
 "C#

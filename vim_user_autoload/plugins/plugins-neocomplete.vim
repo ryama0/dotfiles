@@ -16,14 +16,14 @@ if s:meet_neocomplete_requirements()
   " Define dictionary.
   let $DOTVIM = $HOME . '/.vim'
   let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default' : '',
-      \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'scheme' : $HOME.'/.gosh_completions',
-      \ 'scala' : $DOTVIM.'/dict/scala.dict'
-      \ }
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'scala' : $DOTVIM.'/dict/scala.dict'
+    \ }
   " Define keyword.
   if !exists('g:neocomplete#keyword_patterns')
-      let g:neocomplete#keyword_patterns = {}
+    let g:neocomplete#keyword_patterns = {}
   endif
   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
   " Plugin key-mappings.
@@ -33,9 +33,9 @@ if s:meet_neocomplete_requirements()
   " <CR>: close popup and save indent.
   inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
   function! s:my_cr_function()
-       return neocomplete#close_popup() . "\<CR>"
-       " For no inserting <CR> key.
-       "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    return neocomplete#close_popup() . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
   endfunction
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -57,11 +57,9 @@ if s:meet_neocomplete_requirements()
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   " Enable heavy omni completion.
   if !exists('g:neocomplete#sources#omni#input_patterns')
-       let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
   endif
-  "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-  let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-  let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
   " For perlomni.vim setting.
   "let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
   "C#
@@ -74,7 +72,7 @@ if s:meet_neocomplete_requirements()
   let g:neocomplete#enable_refresh_always = 0
 
   if !exists('g:neocomplete#sources#omni#functions')
-        let g:neocomplete#sources#omni#functions = {}
+    let g:neocomplete#sources#omni#functions = {}
   endif
   let g:neocomplete#sources#omni#functions.javascript = ['javascriptcomplete#CompleteJS']
 endif
