@@ -7,7 +7,7 @@ endfunction
 if executable('clang')
     let g:marching#clang_command = "clang"
     let g:marching#clang_command#options = {
-        \ "cpp" : "-std=c++11"
+        \ "cpp" : "-std=gnu++14"
         \ }
     if s:meet_neocomplete_requirements()
         let g:marching_enable_neocomplete = 1
