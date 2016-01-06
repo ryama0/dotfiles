@@ -6,4 +6,5 @@ rm ~/.tmux.conf
 rm ~/.vimperatorrc
 rm ~/.vimrc
 rm ~/.zshrc
+rm -rf ~/.zsh
 rm -rf ~/.vim/
