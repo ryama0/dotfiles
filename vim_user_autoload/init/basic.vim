@@ -24,10 +24,10 @@ set cursorline
 "不可視文字を表示
 set list
 "不可視文字の表示記号指定
-if has('win32')
-  set listchars=tab:>\ ,eol:~
-else
+if has('mac')
   set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
+else
+  set listchars=tab:>.,eol:$
 endif
 "ビープ音
 set visualbell t_vb=
