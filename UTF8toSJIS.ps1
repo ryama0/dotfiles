@@ -2,12 +2,12 @@
 #$out:出力パス
 #パスは相対パス
 param(
-	[String]$in = "c:\tmp\convert",	
+	[String]$in = "c:\tmp\convert",
 	[String]$out = "c:\tmp\converted"
 )
 
-$in = [String](Get-Location) + "/" + $in
-$out = [String](Get-Location) + "/" + $out
+#$in = [String](Get-Location) + "/" + $in
+#$out = [String](Get-Location) + "/" + $out
 [String]$from = "UTF-8"
 [String]$to = "Shift_JIS"
 
@@ -20,4 +20,3 @@ $writer = New-Object IO.StreamWriter($out,$enc_t)
 while(!$reader.EndOfStream){$writer.WriteLine($reader.ReadLine())}
 $reader.Close()
 $writer.Close()
-
