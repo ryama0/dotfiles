@@ -4,5 +4,5 @@
 #ŠÂ‹«•Ï”HOME‚àİ’è‚ª•K—v
 
 if($HOME -eq $null){exit}
-git clone git://github.com/Shougo/neobundle.vim $HOME/_vim/bundle/neobundle.vim
+git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 .\set_setting.ps1
