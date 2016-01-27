@@ -6,4 +6,6 @@ case ${OSTYPE} in
   linux*)
     source ~/.zsh/user_autoload/linux/basic.sh
     ;;
+  cygwin*)
+    source ~/.zsh/user_autoload/cygwin/basic.sh
 esac
