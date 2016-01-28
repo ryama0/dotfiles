@@ -29,20 +29,20 @@ elseif executable("g++")
 endif
 
 "Tex
-if has('win32')
-    let g:quickrun_config['tex'] = {
-        \ 'command' : 'latexmk',
-        \ 'cmdopt' : '-pdfdvi',
-        \ 'outputter' : 'error',
-        \ 'outputter/error/error' : 'quickfix',
-        \ 'exec' : ['%c %o %s','%c -c']
-        \ }
-elseif has('mac')
+if has('mac')
     let g:quickrun_config['tex'] = {
         \ 'command' : 'latexmk',
         \ 'cmdopt' : '-pdfdvi',
         \ 'outputter' : 'error',
         \ 'outputter/error/error' : 'quickfix',
         \ 'exec' : ['%c %o %s','%c -c','open %s:r.pdf']
+        \ }
+else
+    let g:quickrun_config['tex'] = {
+        \ 'command' : 'latexmk',
+        \ 'cmdopt' : '-pdfdvi',
+        \ 'outputter' : 'error',
+        \ 'outputter/error/error' : 'quickfix',
+        \ 'exec' : ['%c %o %s','%c -c']
         \ }
 endif
