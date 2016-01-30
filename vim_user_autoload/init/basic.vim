@@ -61,6 +61,8 @@ set showcmd
 "Ruby
 compiler ruby
 let ruby_space_error=1
+"TeX
+let g:tex_conceal=''
 
 "Auto Open quickfix-window
 autocmd QuickFixCmdPost *grep* cwindow
