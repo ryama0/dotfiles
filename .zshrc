@@ -8,4 +8,8 @@ case ${OSTYPE} in
     ;;
   cygwin*)
     source ~/.zsh/user_autoload/cygwin/basic.sh
+    ;;
+  msys*)
+    source ~/.zsh/user_autoload/msys/basic.sh
+    ;;
 esac
