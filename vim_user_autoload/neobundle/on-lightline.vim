@@ -1,3 +1,7 @@
+"ステータスライン
+
+NeoBundle 'itchyny/lightline.vim'
+
 let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'colorscheme': 'Tomorrow_Night',

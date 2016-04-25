@@ -1,3 +1,7 @@
+"関数などの定義場所のソース表示
+NeoBundleLazy 'wesleyche/SrcExpl', {
+    \ "autoload" : { "commands": ["SrcExplToggle"]}}
+
 if ! empty(neobundle#get("SrcExpl"))
     " Set refresh time in ms
     let g:SrcExpl_RefreshTime = 1000

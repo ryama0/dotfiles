@@ -1,3 +1,7 @@
+"構文エラーチェック
+
+NeoBundle 'scrooloose/syntastic'
+
 let g:syntastic_check_on_open=1
 "":Errorsで詳細を表示
 let g:syntastic_enable_signs=1

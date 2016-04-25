@@ -1,3 +1,9 @@
+"clang_complete
+if executable('clang')
+  "NeoBundle 'Rip-Rip/clang_complete'
+  "let g:enable_clang_complete=1
+endif
+
 if exists("g:enable_clang_complete")
   let g:clang_complete_auto = 0
   let g:clang_periodic_quickfix = 1

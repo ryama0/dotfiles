@@ -1,6 +1,14 @@
+"入力補完機能
+
 function! s:meet_neocomplete_requirements()
   return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
 endfunction
+
+if s:meet_neocomplete_requirements()
+    NeoBundleFetch 'Shougo/neocomplcache.vim'
+else
+    NeoBundle 'Shougo/neocomplcache.vim'
+endif
 
 if !s:meet_neocomplete_requirements()
   "neocomplcache の設定

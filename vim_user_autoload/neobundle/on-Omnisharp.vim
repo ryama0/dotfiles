@@ -1,3 +1,14 @@
+"C#
+if executable('mono')
+  NeoBundleLazy 'nosami/Omnisharp', {
+  \   'autoload': {'filetypes': ['cs']},
+  \   'build': {
+  \     'mac': 'xbuild server/OmniSharp.sln',
+  \     'unix': 'xbuild server/OmniSharp.sln',
+  \   }
+  \ }
+endif
+
 augroup omnisharp_commands
     autocmd!
     "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)

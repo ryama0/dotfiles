@@ -1,3 +1,6 @@
+"vim上で使用できる統合ユーザーインターフェース
+NeoBundle 'Shougo/unite.vim'
+
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 
@@ -14,3 +17,4 @@ nnoremap <silent> ,vr :UniteResume<CR>
 nnoremap <silent> ,vb :Unite build<CR>
 nnoremap <silent> ,vcb :Unite build:!<CR>
 nnoremap <silent> ,vch :UniteBuildClearHighlight<CR>
+

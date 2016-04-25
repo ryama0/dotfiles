@@ -1,3 +1,9 @@
+"vim-marching
+if executable('clang')
+  NeoBundle "osyo-manga/vim-marching"
+  let g:enable_marching=1
+endif
+
 if exists("g:enable_marching")
   function! s:meet_neocomplete_requirements()
     return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
