@@ -38,3 +38,4 @@ alias ls='gls --color=auto'
 alias ll='ls -la'
 alias system-upgrade='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup && brew doctor'
 
+ssh-add
