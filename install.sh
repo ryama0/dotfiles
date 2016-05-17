@@ -18,6 +18,7 @@ ln -s $DOTFILES_PATH/.gvimrc ~/.gvimrc
 mkdir -p ~/.vim/bundle
 ln -s $DOTFILES_PATH/vim_user_autoload ~/.vim/user_autoload
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+ls ~/.vim/user_autoload/neobundle/available | while read line; do eval "ln -s ~/.vim/user_autoload/neobundle/available/${line} ~/.vim/user_autoload/neobundle/enable/${line}";done
 
 ##dict
 ln -s $DOTFILES_PATH/dict ~/.vim/dict

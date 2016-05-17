@@ -9,7 +9,7 @@ endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-runtime! user_autoload/neobundle/on-*.vim
+runtime! user_autoload/neobundle/enable/*.vim
 
 call neobundle#end()
 
