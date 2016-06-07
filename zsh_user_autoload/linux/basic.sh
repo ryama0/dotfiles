@@ -39,5 +39,7 @@ case ${distri_name} in
         ;;
 esac
 
-eval `ssh-agent`
-ssh-add
+if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
+  eval `ssh-agent`
+  ssh-add
+fi
