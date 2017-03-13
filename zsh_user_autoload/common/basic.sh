@@ -111,3 +111,7 @@ kterm*|xterm*)
   }
   ;;
 esac
+
+# SSH
+ssh-add
+
