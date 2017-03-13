@@ -38,3 +38,7 @@ alias ls='gls --color=auto'
 alias ll='ls -la'
 alias system-upgrade='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup && brew doctor'
 
+# Python
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bing:$PATH"
+eval "$(pyenv init -)"
