@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ ! -v DOTFILES_PATH ]; then
+if [ -v DOTFILES_PATH ]; then
   DOTFILES_PATH="$(cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")"; pwd)"
 fi
-if [ ! -v INSTALL_PATH ]; then
+if [ -v INSTALL_PATH ]; then
   INSTALL_PATH=${HOME}
 fi
 
