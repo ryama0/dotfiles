@@ -35,7 +35,7 @@ distri_name=`get_linux_distribution`
 set_linuxbrew
 case ${distri_name} in
     Ubuntu)
-        alias system-upgrade='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
+        alias package-upgrade='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
         ;;
 esac
 
