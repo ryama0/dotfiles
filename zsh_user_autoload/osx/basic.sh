@@ -36,7 +36,7 @@ export MONO_GAC_PREFIX="/usr/local"
 alias vi=vim
 alias ls='gls --color=auto'
 alias ll='ls -la'
-alias package-upgrade='brew update && brew upgrade && brew cask update && brew cleanup && brew cask cleanup && brew doctor'
+alias package-upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup && brew doctor'
 
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
