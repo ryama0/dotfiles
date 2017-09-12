@@ -112,9 +112,6 @@ kterm*|xterm*)
   ;;
 esac
 
-# SSH
-ssh-add
-
 # rustlang
 if [ -d ${HOME}/.cargo/bin ]; then
   PATH=${HOME}/.cargo/bin:${PATH}

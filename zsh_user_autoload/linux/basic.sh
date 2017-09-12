@@ -40,6 +40,13 @@ case ${distri_name} in
 esac
 
 if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
-  eval `ssh-agent`
-  ssh-add
+  case ${distri_name} in
+    Ubuntu)
+      process_check=`ps ux| grep ssh-agent | grep -v grep | wc -l`
+      if [ $process_check -lt 2 ]; then
+        eval `ssh-agent`
+        ssh-add
+      fi
+      ;;
+  esac
 fi
