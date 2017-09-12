@@ -39,14 +39,17 @@ case ${distri_name} in
         ;;
 esac
 
-if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
-  case ${distri_name} in
-    Ubuntu)
-      process_check=`ps ux| grep ssh-agent | grep -v grep | wc -l`
-      if [ $process_check -lt 2 ]; then
-        eval `ssh-agent`
-        ssh-add
-      fi
-      ;;
-  esac
+mkdir -p ${HOME}/.ssh/
+SSH_ENV="${HOME}/.ssh/.agent-environment"
+function start_ssh_agent() {
+  ssh-agent | grep -v echo > "${SSH_ENV}"
+  chmod 0600 "${SSH_ENV}"
+  . "${SSH_ENV}"
+  ssh-add
+}
+if [ -f "${SSH_ENV}" ]; then
+  . "${SSH_ENV}"
+  ps aux | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || start_ssh_agent
+else
+  start_ssh_agent
 fi
