@@ -24,7 +24,7 @@ set cursorline
 "不可視文字を表示
 set list
 "不可視文字の表示記号指定
-if has('mac')
+if has('mac') || has('unix')
   set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
 else
   set listchars=tab:>.,eol:$
