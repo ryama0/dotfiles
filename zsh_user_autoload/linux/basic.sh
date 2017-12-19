@@ -47,11 +47,15 @@ function start_ssh_agent() {
   . "${SSH_ENV}"
   ssh-add
 }
-if [ -f "${SSH_ENV}" ]; then
-  . "${SSH_ENV}"
-  ps aux | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || start_ssh_agent
-else
-  start_ssh_agent
+
+if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
+# ssh非接続時
+  if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}"
+    ps aux | grep ${SSH_AGENT_PID} | grep ssh-agent > /dev/null || start_ssh_agent
+  else
+    start_ssh_agent
+  fi
 fi
 
 # pyenv
