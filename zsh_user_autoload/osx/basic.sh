@@ -40,8 +40,10 @@ alias package-upgrade='brew update && brew upgrade && brew cleanup && brew cask 
 
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bing:$PATH"
-eval "$(pyenv init -)"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+if [ -d ${PYENV_ROOT} ]; then
+  eval "$(pyenv init -)"
+fi
 
 # SSH
-ssh-add
+ssh-add -K
