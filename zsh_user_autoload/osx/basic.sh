@@ -32,18 +32,24 @@ path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 # MONO
 export MONO_GAC_PREFIX="/usr/local"
 
-# aliases
-alias vi=vim
-alias ls='gls --color=auto'
-alias ll='ls -la'
-alias package-upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup && brew doctor'
-
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
 if [ -d ${PYENV_ROOT} ]; then
   eval "$(pyenv init -)"
 fi
+
+# coreutils
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+  export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+  export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+fi
+
+# aliases
+alias vi=vim
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias package-upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup && brew doctor'
 
 # SSH
 ssh-add -K
