@@ -68,3 +68,4 @@ let g:tex_conceal=''
 autocmd QuickFixCmdPost *grep* cwindow
 
 let g:tex_flavor='latex'
+
