@@ -111,6 +111,9 @@ kterm*|xterm*)
   ;;
 esac
 
+## PATH
+export path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+
 # pyenv
 source ~/.zsh/user_autoload/common/pyenv.sh
 
@@ -122,3 +125,4 @@ source ~/.zsh/user_autoload/common/rbenv.sh
 
 # nvm
 source ~/.zsh/user_autoload/common/nvm.sh
+

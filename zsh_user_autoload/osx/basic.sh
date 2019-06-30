@@ -27,8 +27,6 @@ typeset -U path cdpath fpath manpath
 typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
 sudo_path=({/usr/local,/usr,}/sbin(N-/))
-# pathを設定
-path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 # MONO
 export MONO_GAC_PREFIX="/usr/local"
 
