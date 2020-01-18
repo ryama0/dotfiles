@@ -40,7 +40,7 @@ fi
 alias vi=vim
 alias ls='ls --color=auto'
 alias ll='ls -la'
-alias package-upgrade='brew update && brew upgrade && brew cleanup && brew doctor'
+alias package-upgrade='brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 
 # SSH
 ssh-add -K
