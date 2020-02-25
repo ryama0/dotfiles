@@ -1,0 +1,83 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# for vim-lsp
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+# for vim-lsp
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+# for vim-lsp
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+# for Language Server Protocol
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+depends = [
+  'async.vim',
+  'asyncomplete.vim',
+  'asyncomplete-lsp.vim',
+]
+
+# for vim-lsp
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = [
+  'vim-lsp',
+]
+
+# for git commit
+[[plugins]]
+repo = 'rhysd/committia.vim'
+hook_add = '''
+  let g:committia_hooks = {}
+  function! g:committia_hooks.edit_open(info)
+    " Additional settings
+    setlocal spell
+  endfunction
+'''
+
+# for status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# for denite.vim
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = '''! has('nvim')'''
+
+# for denite.vim
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '''! has('nvim')'''
+
+# for file
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = [
+  'nvim-yarp',
+  'vim-hug-neovim-rpc',
+]
+hook_add = '''
+  nnoremap <silent> sf :<C-u>Denite file<CR>
+
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+  endfunction
+'''
+

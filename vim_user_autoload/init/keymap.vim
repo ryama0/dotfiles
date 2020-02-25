@@ -11,13 +11,13 @@ nnoremap sH <C-w>H
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>
-nnoremap sO <C-w>=
+"nnoremap so <C-w>_<C-w>
+"nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
+"nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-nnoremap sm :<C-u>Unite file_mru buffer<CR>
-nnoremap sf :<C-u>Unite file<CR>
+"nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+"nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+"nnoremap sm :<C-u>Unite file_mru buffer<CR>
+"nnoremap sf :<C-u>Unite file<CR>
