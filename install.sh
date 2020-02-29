@@ -15,6 +15,7 @@ ln -s $DOTFILES_PATH/zsh_user_autoload ~/.zsh/user_autoload
 #vim
 ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
 ln -s $DOTFILES_PATH/.gvimrc ~/.gvimrc
+mkdir ~/.vim
 ln -s $DOTFILES_PATH/vim_user_autoload ~/.vim/user_autoload
 
 ##dict
