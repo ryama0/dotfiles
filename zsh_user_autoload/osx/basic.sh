@@ -44,3 +44,10 @@ alias package-upgrade='brew update && brew upgrade && brew cask upgrade && brew 
 
 # SSH
 ssh-add -K
+
+# zsh-completions `brew install zsh-completions`
+if [ -e "$(which brew)" -a -e "$(brew --prefix)/share/zsh-completions" ] ; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
