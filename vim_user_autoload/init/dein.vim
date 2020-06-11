@@ -39,3 +39,4 @@ endif
 filetype plugin indent on
 syntax enable
 
+let g:lsp_diagnostics_echo_cursor = 1
