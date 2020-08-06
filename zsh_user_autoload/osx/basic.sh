@@ -40,7 +40,6 @@ fi
 alias vi=vim
 alias ls='ls --color=auto'
 alias ll='ls -la'
-alias package-upgrade='brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 
 # SSH
 ssh-add -K
@@ -62,6 +61,23 @@ _EOH_
   case $1 in
     paste) pbpaste ;;
     copy) pbcopy ;;
+    *) return 1 ;;
+  esac
+  return 0
+}
+
+function pkgctl() {
+  if [ $# -ne 1 ]; then
+    cat <<_EOH_
+Usage: pkgctl [update|upgrade|cleanup|full-upgrade]
+_EOH_
+  fi
+  arg=$1
+  case $1 in
+    update) brew update ;;
+    upgrade) brew upgrade && brew cask upgrade ;;
+    cleanup) brew cleanup && brew doctor ;;
+    full-upgrade) pkgctl update && pkgctl upgrade && pkgctl cleanup ;;
     *) return 1 ;;
   esac
   return 0
