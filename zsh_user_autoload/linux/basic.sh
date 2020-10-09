@@ -1,20 +1,6 @@
 # for Linux
 alias ls='ls --color=auto'
 
-# linuxbrew
-function set_linuxbrew() {
-  local linuxbrew_home=''
-  if [ -e "$HOME/.linuxbrew" ]; then
-    linuxbrew_home="$HOME/.linuxbrew"
-  elif [ -e "/home/linuxbrew/.linuxbrew" ]; then
-    linuxbrew_home="/home/linuxbrew/.linuxbrew"
-  fi
-
-  if [ -n "$linuxbrew_home" -a -e "$linuxbrew_home/bin/brew" ]; then
-    eval $("$linuxbrew_home/bin/brew" shellenv)
-  fi
-}
-
 # Linuxディストリ判定
 function get_linux_distribution() {
   local distri_name=""
@@ -37,7 +23,6 @@ function get_linux_distribution() {
 }
 
 distri_name=`get_linux_distribution`
-set_linuxbrew
 case ${distri_name} in
     Ubuntu)
         alias package-upgrade='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y'
