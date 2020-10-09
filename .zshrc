@@ -19,3 +19,4 @@ case ${OSTYPE} in
   *)
     echo "The settings for specified OS have not been read."
 esac
+typeset -U PATH
