@@ -21,8 +21,6 @@ export CPATH=${CPLUS_INCLUDE_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib
 export INCLUDE=/usr/local/include
 
-# 重複パスを登録しない
-typeset -U path cdpath fpath manpath
 # sudo用のpathを設定
 typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
