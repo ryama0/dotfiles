@@ -9,6 +9,7 @@ ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
 
 #zsh
 ln -s $DOTFILES_PATH/.zshrc ~/.zshrc
+ln -s $DOTFILES_PATH/.zprofile ~/.zprofile
 mkdir ~/.zsh
 ln -s $DOTFILES_PATH/zsh_user_autoload ~/.zsh/user_autoload
 

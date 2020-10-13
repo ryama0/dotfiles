@@ -112,9 +112,6 @@ esac
 ## PATH
 export path=(~/bin(N-/) /usr/local/sbin(N-/) /usr/local/bin(N-/) ${path})
 
-# linuxbrew
-source ~/.zsh/user_autoload/common/linuxbrew.sh
-
 # pyenv
 source ~/.zsh/user_autoload/common/pyenv.sh
 
