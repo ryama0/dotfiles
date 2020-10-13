@@ -1,5 +1,3 @@
-PATH=/usr/local/sbin:$PATH
-
 # ICPC
 if [ -e /opt/intel/bin/compilervars.sh ]; then
     source /opt/intel/bin/compilervars.sh intel64
@@ -112,7 +110,7 @@ kterm*|xterm*)
 esac
 
 ## PATH
-export path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+export path=(~/bin(N-/) /usr/local/sbin(N-/) /usr/local/bin(N-/) ${path})
 
 # linuxbrew
 source ~/.zsh/user_autoload/common/linuxbrew.sh
