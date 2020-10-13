@@ -1,6 +1,3 @@
-# 重複排除
-typeset -U path cdpath fpath manpath
-
 PATH=/usr/local/sbin:$PATH
 
 # ICPC
