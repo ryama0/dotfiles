@@ -1,3 +1,5 @@
+source ~/.zsh/user_autoload/linux/env.sh
+
 # for Linux
 alias ls='ls --color=auto'
 
@@ -22,13 +24,6 @@ function get_linux_distribution() {
   echo ${distri_name}
 }
 
-distri_name=`get_linux_distribution`
-case ${distri_name} in
-    Ubuntu)
-        alias package-upgrade='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y'
-        ;;
-esac
-
 mkdir -p ${HOME}/.ssh/
 SSH_ENV="${HOME}/.ssh/.agent-environment"
 function start_ssh_agent() {
@@ -47,3 +42,6 @@ if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
     start_ssh_agent
   fi
 fi
+
+source ~/.zsh/user_autoload/linux/clipctl.sh
+source ~/.zsh/user_autoload/linux/pkgctl.sh
