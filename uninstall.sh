@@ -2,6 +2,7 @@
 
 rm ~/.latexmkrc
 rm ~/.sbtconfig
+rm ~/.gitconfig
 rm ~/.tmux.conf
 rm ~/.tmux.d
 rm ~/.vimperatorrc

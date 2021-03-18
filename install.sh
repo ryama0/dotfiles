@@ -2,10 +2,10 @@
 
 DOTFILES_PATH="$(cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")"; pwd)"
 
-#link
 ln -s $DOTFILES_PATH/.latexmkrc ~/.latexmkrc
 ln -s $DOTFILES_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
+ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
 
 #zsh
 ln -s $DOTFILES_PATH/.zshrc ~/.zshrc
