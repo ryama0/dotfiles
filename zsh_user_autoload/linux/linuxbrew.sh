@@ -1,13 +1,17 @@
-linuxbrew_home=''
+LINUXBREW_PREFIX=''
 if [ -e "$HOME/.linuxbrew" ]; then
-  linuxbrew_home="$HOME/.linuxbrew"
+  LINUXBREW_PREFIX="$HOME/.linuxbrew"
 elif [ -e "/home/linuxbrew/.linuxbrew" ]; then
-  linuxbrew_home="/home/linuxbrew/.linuxbrew"
+  LINUXBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 fi
 
-if [ -n "$linuxbrew_home" -a -e "$linuxbrew_home/bin/brew" ]; then
-  eval $("$linuxbrew_home/bin/brew" shellenv)
+if [ -e "$LINUXBREW_PREFIX/bin/brew" ]; then
+  eval $("$LINUXBREW_PREFIX/bin/brew" shellenv)
 fi
 
-unset linuxbrew_home
+# zsh-completions `brew install zsh-completions`
+if [ -d "${LINUXBREW_PREFIX}/share/zsh/site-functions" ] ; then
+  FPATH="${LINUXBREW_PREFIX}/share/zsh/site-functions:$FPATH"
+fi
 
+unset LINUXBREW_PREFIX

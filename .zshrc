@@ -19,6 +19,7 @@ case ${OSTYPE} in
   *)
     echo "The settings for specified OS have not been read."
 esac
+source ~/.zsh/user_autoload/common/comp.sh
 
 # 重複排除
 typeset -U path cdpath fpath manpath
