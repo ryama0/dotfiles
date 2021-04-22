@@ -1,7 +1,3 @@
-# ICPC
-if [ -e /opt/intel/bin/compilervars.sh ]; then
-    source /opt/intel/bin/compilervars.sh intel64
-fi
 # zshの設定
 ## ユーザー定義
 export EDITOR=vim	#エディタをvimに設定
