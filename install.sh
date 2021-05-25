@@ -7,6 +7,10 @@ ln -s $DOTFILES_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
 ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
 
+#ssh
+mkdir ~/.ssh
+ln -s $DOTFILES_PATH/.ssh/config  ~/.ssh/config
+
 #zsh
 ln -s $DOTFILES_PATH/.zshrc ~/.zshrc
 ln -s $DOTFILES_PATH/.zprofile ~/.zprofile
