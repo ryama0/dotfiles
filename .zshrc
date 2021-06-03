@@ -1,12 +1,12 @@
-source ~/.zsh/user_autoload/common/base.sh
+source ~/.zsh/user_autoload/common/base.rc.sh
 case ${OSTYPE} in
   darwin*)
-    echo "Load settings for macos"
-    source ~/.zsh/user_autoload/osx/base.sh
+    echo "Load settings for macOS"
+    source ~/.zsh/user_autoload/osx/base.rc.sh
     ;;
   linux*)
     echo "Load settings for Linux"
-    source ~/.zsh/user_autoload/linux/base.sh
+    source ~/.zsh/user_autoload/linux/base.rc.sh
     ;;
   cygwin*)
     echo "Load settings for Cygwin"
