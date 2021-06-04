@@ -7,9 +7,8 @@ sudo_path=({"$HOMEBREW_PREFIX",/usr,}/sbin(N-/))
 export MONO_GAC_PREFIX="$HOMEBREW_PREFIX"
 
 # brew install coreutils
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ]; then
   alias ls="${HOMEBREW_PREFIX}/bin/gls --color=auto"
-  alias ll='ls -la'
 fi
 
 # zsh-completions `brew install zsh-completions`

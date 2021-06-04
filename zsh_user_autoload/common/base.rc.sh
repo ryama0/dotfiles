@@ -78,3 +78,5 @@ kterm*|xterm*)
   }
   ;;
 esac
+
+alias ll="ls -la"
