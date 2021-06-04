@@ -1,3 +1,4 @@
+source ~/.zsh/user_autoload/common/base.profile.sh
 case ${OSTYPE} in
   darwin*)
     echo "Load profile for macOS"
