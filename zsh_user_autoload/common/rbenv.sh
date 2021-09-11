@@ -1,6 +1,7 @@
 if [ -d "$HOME/.rbenv" ]; then
-  if [ -d "$HOME/.rbenv/bin" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-  fi
+  export path=(
+    $HOME/.rbenv/bin(N-/)
+    $path
+  )
   eval "$(rbenv init -)"
 fi

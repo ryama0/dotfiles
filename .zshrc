@@ -1,3 +1,6 @@
+# 重複排除
+typeset -U path PATH cdpath CDPATH fpath FPATH manpath MANPATH
+
 source ~/.zsh/user_autoload/common/base.rc.sh
 case ${OSTYPE} in
   darwin*)
@@ -20,7 +23,3 @@ case ${OSTYPE} in
     echo "Skip to load settings for specified OS"
 esac
 source ~/.zsh/user_autoload/common/comp.sh
-
-# 重複排除
-typeset -U path cdpath fpath manpath
-

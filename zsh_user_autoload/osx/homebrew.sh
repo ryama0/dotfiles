@@ -12,8 +12,9 @@ if [ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ]; then
 fi
 
 # zsh-completions `brew install zsh-completions`
-if [ -d "${HOMEBREW_PREFIX}/share/zsh-completions" ] ; then
-  FPATH="${HOMEBREW_PREFIX}/share/zsh-completions:$FPATH"
-fi
+export fpath=(
+  ${HOMEBREW_PREFIX}/share/zsh-completions(N-/)
+  $fpath
+)
 
 unset HOMEBREW_PREFIX

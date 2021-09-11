@@ -7,7 +7,7 @@ ssh-add -K &> /dev/null
 source ~/.zsh/user_autoload/osx/env.sh
 #source ~/.zsh/user_autoload/osx/clang.sh
 #source ~/.zsh/user_autoload/osx/coreutils.sh
-if [ -e "$(which brew)" ]; then
+if type 'brew' > /dev/null 2>&1; then
   source ~/.zsh/user_autoload/osx/homebrew.sh
 fi
 source ~/.zsh/user_autoload/osx/clipctl.sh
