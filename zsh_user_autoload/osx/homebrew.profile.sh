@@ -1,6 +1,6 @@
 typeset -xT PKG_CONFIG_PATH pkg_config_path
-typeset -U PKG_CONFIG_PATH pkg_config_path
-pkg_config_path=(
+typeset -gU PKG_CONFIG_PATH pkg_config_path
+export pkg_config_path=(
     /usr/local/opt/libpq/lib/pkgconfig(N-/)
     /usr/local/opt/mysql-client/lib/pkgconfig(N-/)
     /usr/local/opt/openssl@1.1/lib/pkgconfig(N-/)
