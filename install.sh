@@ -30,3 +30,6 @@ ln -s $DOTFILES_PATH/dict ~/.vim/dict
 ln -s $DOTFILES_PATH/.tmux.conf ~/.tmux.conf
 ln -s $DOTFILES_PATH/.tmux.d ~/.tmux.d
 
+#git
+mkdir -p ~/.config/git
+ln -s $DOTFILES_PATH/.gitignore_global ~/.config/git/ignore
