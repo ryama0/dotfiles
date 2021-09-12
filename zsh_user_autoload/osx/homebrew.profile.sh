@@ -7,9 +7,7 @@ export pkg_config_path=(
     $pkg_config_path
 )
 
-typeset -xT LDFLAGS ldflags
-typeset -xT CPPFLAGS cppflags
-typeset -U LDFLAGS CPPFLAGS
+typeset -gU LDFLAGS CPPFLAGS
 ldflag_paths=(
     /usr/local/opt/libpq/lib(N-/)
     /usr/local/opt/mysql-client/lib(N-/)
@@ -25,10 +23,8 @@ export ldflags=(
     ${ldflag_paths[@]/#/-L}
     $ldflags
 )
-export cppflags=(
-    ${cppflag_paths[@]/#/-I}
-    $cppflags
-)
+export LDFLAGS="${ldflag_paths[@]/#/-L} ${LDFLAGS}"
+export CPPFLAGS="${cppflag_paths[@]/#/-L} ${CPPFLAGS}"
 
 unset ldflag_paths
 unset cppflag_paths
