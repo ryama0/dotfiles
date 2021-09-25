@@ -24,7 +24,7 @@ export ldflags=(
     $ldflags
 )
 export LDFLAGS="${ldflag_paths[@]/#/-L} ${LDFLAGS}"
-export CPPFLAGS="${cppflag_paths[@]/#/-L} ${CPPFLAGS}"
+export CPPFLAGS="${cppflag_paths[@]/#/-I} ${CPPFLAGS}"
 
 unset ldflag_paths
 unset cppflag_paths
