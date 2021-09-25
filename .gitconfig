@@ -1,3 +1,5 @@
 [user]
 	name = ryama0
 	email = create.ryama0@gmail.com
+[grep]
+	lineNumber = true
