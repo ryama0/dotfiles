@@ -37,3 +37,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# jenv
+.java-version
+

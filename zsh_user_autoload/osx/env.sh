@@ -9,3 +9,6 @@ source ~/.zsh/user_autoload/common/rbenv.sh
 
 # nodenv
 source ~/.zsh/user_autoload/common/nodenv.sh
+
+# jenv
+source ~/.zsh/user_autoload/common/jenv.rc.sh
