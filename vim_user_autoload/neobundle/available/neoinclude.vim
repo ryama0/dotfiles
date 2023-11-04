@@ -1,1 +1,0 @@
-NeoBundle 'Shougo/neoinclude.vim'
