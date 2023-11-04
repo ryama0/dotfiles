@@ -7,7 +7,7 @@ ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
 ln -s $DOTFILES_PATH/.rtxrc ~/.rtxrc
 
 #ssh
-mkdir ~/.ssh
+mkdir -p ~/.ssh
 ln -s $DOTFILES_PATH/.ssh/config  ~/.ssh/config
 
 #zsh
