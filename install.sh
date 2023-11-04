@@ -22,9 +22,6 @@ ln -s $DOTFILES_PATH/.gvimrc ~/.gvimrc
 mkdir ~/.vim
 ln -s $DOTFILES_PATH/vim_user_autoload ~/.vim/user_autoload
 
-##dict
-ln -s $DOTFILES_PATH/dict ~/.vim/dict
-
 #tmux
 ln -s $DOTFILES_PATH/.tmux.conf ~/.tmux.conf
 ln -s $DOTFILES_PATH/.tmux.d ~/.tmux.d
