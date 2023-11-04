@@ -12,3 +12,4 @@ rm ~/.ssh/config
 rm ~/.zshrc
 rm -rf ~/.zsh
 rm -rf ~/.vim/
+rm ~/.rtxrc

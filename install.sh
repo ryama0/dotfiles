@@ -6,6 +6,7 @@ ln -s $DOTFILES_PATH/.latexmkrc ~/.latexmkrc
 ln -s $DOTFILES_PATH/.vimperatorrc ~/.vimperatorrc
 ln -s $DOTFILES_PATH/.sbtconfig ~/.sbtconfig
 ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
+ln -s $DOTFILES_PATH/.rtxrc ~/.rtxrc
 
 #ssh
 mkdir ~/.ssh
