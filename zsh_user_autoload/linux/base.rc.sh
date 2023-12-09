@@ -45,3 +45,4 @@ fi
 
 source ~/.zsh/user_autoload/linux/clipctl.sh
 source ~/.zsh/user_autoload/linux/pkgctl.sh
+source ~/.zsh/user_autoload/linux/1password.sh
