@@ -1,2 +1,2 @@
-# rtx
-source ~/.zsh/user_autoload/common/rtx.sh
+# mise
+source ~/.zsh/user_autoload/common/mise.sh

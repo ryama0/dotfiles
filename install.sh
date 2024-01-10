@@ -4,7 +4,6 @@ DOTFILES_PATH="$(cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")"; pwd)"
 
 ln -s $DOTFILES_PATH/.latexmkrc ~/.latexmkrc
 ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
-ln -s $DOTFILES_PATH/.rtxrc ~/.rtxrc
 
 #ssh
 mkdir -p ~/.ssh

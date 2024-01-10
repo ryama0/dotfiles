@@ -7,7 +7,7 @@ _EOH_
   arg=$1
   case $1 in
     update) brew update ;;
-    upgrade) brew upgrade && brew upgrade --cask && rtx upgrade ;;
+    upgrade) brew upgrade && brew upgrade --cask && mise upgrade ;;
     cleanup) brew cleanup && brew doctor ;;
     full-upgrade) pkgctl update && pkgctl upgrade && pkgctl cleanup ;;
     *) return 1 ;;

@@ -12,4 +12,3 @@ rm ~/.zshrc
 rm ~/.zprofile
 rm -rf ~/.zsh
 rm -rf ~/.vim/
-rm ~/.rtxrc
