@@ -2,6 +2,7 @@
 typeset -U path PATH cdpath CDPATH fpath FPATH manpath MANPATH
 
 source ~/.zsh/user_autoload/common/base.rc.sh
+source ~/.zsh/user_autoload/common/prompt.sh
 case ${OSTYPE} in
   darwin*)
     echo "Load settings for macOS"
