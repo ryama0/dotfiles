@@ -30,7 +30,6 @@ create_link "$DOTFILES_PATH/.gitignore_global" ~/.config/git/ignore
 if [ ! -d ~/.ssh ]; then
   mkdir  ~/.ssh
 fi
-create_link "$DOTFILES_PATH/.ssh/config"  ~/.ssh/config
 
 #zsh
 create_link "$DOTFILES_PATH/.zshrc" ~/.zshrc
