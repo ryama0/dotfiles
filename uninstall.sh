@@ -8,8 +8,6 @@ function remove_link() {
   fi
 }
 
-# latex
-remove_link ~/.latexmkrc
 # git
 remove_link ~/.gitconfig
 remove_link ~/.config/git/ignore

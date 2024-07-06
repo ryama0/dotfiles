@@ -15,9 +15,6 @@ if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
 
-# latex
-create_link "$DOTFILES_PATH/.latexmkrc" ~/.latexmkrc
-
 # git
 create_link "$DOTFILES_PATH/.gitconfig" ~/.gitconfig
 if [ ! -d ~/.config/git ]; then
