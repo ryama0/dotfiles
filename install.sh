@@ -1,30 +1,56 @@
 #!/bin/bash
+set -eu
 
 DOTFILES_PATH="$(cd "$(dirname "${BASH_SOURCE:-${(%):-%N}}")"; pwd)"
 
-ln -s $DOTFILES_PATH/.latexmkrc ~/.latexmkrc
-ln -s $DOTFILES_PATH/.gitconfig ~/.gitconfig
+function create_link() {
+  local target="$1"
+  local link="$2"
+  if [ ! -L "$link" ]; then
+    ln -s "$target" "$link"
+  fi
+}
+
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
+
+# latex
+create_link "$DOTFILES_PATH/.latexmkrc" ~/.latexmkrc
+
+# git
+create_link "$DOTFILES_PATH/.gitconfig" ~/.gitconfig
+if [ ! -d ~/.config/git ]; then
+  mkdir ~/.config/git
+fi
+
+create_link "$DOTFILES_PATH/.gitignore_global" ~/.config/git/ignore
 
 #ssh
-mkdir -p ~/.ssh
-ln -s $DOTFILES_PATH/.ssh/config  ~/.ssh/config
+if [ ! -d ~/.ssh ]; then
+  mkdir  ~/.ssh
+fi
+create_link "$DOTFILES_PATH/.ssh/config"  ~/.ssh/config
 
 #zsh
-ln -s $DOTFILES_PATH/.zshrc ~/.zshrc
-ln -s $DOTFILES_PATH/.zprofile ~/.zprofile
-mkdir ~/.zsh
-ln -s $DOTFILES_PATH/zsh_user_autoload ~/.zsh/user_autoload
+create_link "$DOTFILES_PATH/.zshrc" ~/.zshrc
+create_link "$DOTFILES_PATH/.zprofile" ~/.zprofile
+if [ ! -d ~/.zsh ]; then
+  mkdir ~/.zsh
+fi
+create_link "$DOTFILES_PATH/zsh_user_autoload" ~/.zsh/user_autoload
 
 #vim
-ln -s $DOTFILES_PATH/.vimrc ~/.vimrc
-ln -s $DOTFILES_PATH/.gvimrc ~/.gvimrc
-mkdir ~/.vim
-ln -s $DOTFILES_PATH/vim_user_autoload ~/.vim/user_autoload
+create_link "$DOTFILES_PATH/.vimrc" ~/.vimrc
+create_link "$DOTFILES_PATH/.gvimrc" ~/.gvimrc
+if [ ! -d ~/.vim ]; then
+  mkdir ~/.vim
+fi
+create_link "$DOTFILES_PATH/vim_user_autoload" ~/.vim/user_autoload
 
 #tmux
-ln -s $DOTFILES_PATH/.tmux.conf ~/.tmux.conf
-ln -s $DOTFILES_PATH/.tmux.d ~/.tmux.d
+create_link "$DOTFILES_PATH/.tmux.conf" ~/.tmux.conf
+create_link "$DOTFILES_PATH/.tmux.d" ~/.tmux.d
 
-#git
-mkdir -p ~/.config/git
-ln -s $DOTFILES_PATH/.gitignore_global ~/.config/git/ignore
+# alacritty
+create_link "$DOTFILES_PATH/.config/alacritty" ~/.config/alacritty
