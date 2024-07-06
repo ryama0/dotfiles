@@ -21,7 +21,7 @@ if [ ! -d ~/.config/git ]; then
   mkdir ~/.config/git
 fi
 
-create_link "$DOTFILES_PATH/.gitignore_global" ~/.config/git/ignore
+create_link "$DOTFILES_PATH/.config/git/ignore" ~/.config/git/ignore
 
 #ssh
 if [ ! -d ~/.ssh ]; then
