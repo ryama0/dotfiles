@@ -1,16 +1,19 @@
+[shell]
+program = "/usr/local/bin/zsh"
+
 [font.bold]
-family = "MesloLGS NF"
+family = "Monaco"
 style = "Bold"
 
 [font.bold_italic]
-family = "MesloLGS NF"
+family = "Monaco"
 style = "Bold Italic"
 
 [font.italic]
-family = "MesloLGS NF"
+family = "Monaco"
 style = "Italic"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "Monaco"
 style = "Regular"
 
