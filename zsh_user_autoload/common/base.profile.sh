@@ -1,2 +1,2 @@
 ## PATH
-export path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) ${path})
+export path=(~/.local/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) ${path})
