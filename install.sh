@@ -11,6 +11,8 @@ function create_link() {
   fi
 }
 
+mkdir -p ~/.local/bin
+
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
