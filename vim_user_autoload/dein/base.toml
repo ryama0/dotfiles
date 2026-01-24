@@ -1,0 +1,19 @@
+# default install plugins
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# for git commit
+[[plugins]]
+repo = 'rhysd/committia.vim'
+hook_add = '''
+  let g:committia_hooks = {}
+  function! g:committia_hooks.edit_open(info)
+    " Additional settings
+    setlocal spell
+  endfunction
+'''
+
+# for status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
