@@ -1,5 +1,3 @@
-source ~/.zsh/user_autoload/linux/env.sh
-
 # for Linux
 alias ls='ls --color=auto'
 
@@ -43,6 +41,6 @@ if [ -z "${REMOTEHOST}${SSH_CONNECTION}" ]; then
   fi
 fi
 
-source ~/.zsh/user_autoload/linux/clipctl.sh
+source ~/.zsh/user_autoload/linux/clipctl.rc.sh
 source ~/.zsh/user_autoload/linux/pkgctl.sh
-source ~/.zsh/user_autoload/linux/1password.sh
+source ~/.zsh/user_autoload/linux/1password.rc.sh
