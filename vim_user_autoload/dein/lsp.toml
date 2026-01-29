@@ -1,7 +1,0 @@
-# install plugins depends on deno
-[[plugins]]
-repo = 'Shougo/ddc.vim'
-depends = ['denops.vim']
-
-[[plugins]]
-repo = 'vim-denops/denops.vim'

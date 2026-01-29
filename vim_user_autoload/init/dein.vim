@@ -25,11 +25,6 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:base_toml,      {'lazy': 0})
   call dein#load_toml(s:base_lazy_toml, {'lazy': 1})
 
-  if executable('deno') && has('patch-9.1.1646')
-    let s:lsp_toml = g:dein_plugins_dir . '/lsp.toml'
-    call dein#load_toml(s:lsp_toml, {'lazy': 0})
-  endif
-
   call dein#end()
   call dein#save_state()
 endif
