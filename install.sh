@@ -11,8 +11,16 @@ function create_link() {
   fi
 }
 
+#zsh
+create_link "$DOTFILES_PATH/.zshrc" ~/.zshrc
+create_link "$DOTFILES_PATH/.zprofile" ~/.zprofile
+mkdir -p ~/.zsh/local
+create_link "$DOTFILES_PATH/.zsh/conf.d" ~/.zsh/conf.d
+
+# user bin
 mkdir -p ~/.local/bin
 
+# user config
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
@@ -22,21 +30,12 @@ create_link "$DOTFILES_PATH/.gitconfig" ~/.gitconfig
 if [ ! -d ~/.config/git ]; then
   mkdir ~/.config/git
 fi
-
 create_link "$DOTFILES_PATH/.config/git/ignore" ~/.config/git/ignore
 
 #ssh
 if [ ! -d ~/.ssh ]; then
   mkdir  ~/.ssh
 fi
-
-#zsh
-create_link "$DOTFILES_PATH/.zshrc" ~/.zshrc
-create_link "$DOTFILES_PATH/.zprofile" ~/.zprofile
-if [ ! -d ~/.zsh ]; then
-  mkdir ~/.zsh
-fi
-create_link "$DOTFILES_PATH/zsh_user_autoload" ~/.zsh/user_autoload
 
 #vim
 create_link "$DOTFILES_PATH/.vimrc" ~/.vimrc
@@ -52,3 +51,6 @@ create_link "$DOTFILES_PATH/.tmux.d" ~/.tmux.d
 
 # alacritty
 create_link "$DOTFILES_PATH/.config/alacritty" ~/.config/alacritty
+
+# cleanup
+echo 'Re-login required'

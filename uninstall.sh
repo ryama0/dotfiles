@@ -16,7 +16,7 @@ remove_link ~/.ssh/config
 # zsh
 remove_link ~/.zshrc
 remove_link ~/.zprofile
-rm -rf ~/.zsh
+remove_link ~/.zsh/conf.d
 # vim
 remove_link ~/.vimrc
 remove_link ~/.gvimrc

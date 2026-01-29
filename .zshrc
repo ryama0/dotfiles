@@ -1,22 +1,25 @@
 # 重複排除
 typeset -U path PATH cdpath CDPATH fpath FPATH manpath MANPATH
 
-source ~/.zsh/user_autoload/common/base.rc.sh
-source ~/.zsh/user_autoload/common/prompt.rc.sh
+source ~/.zsh/conf.d/common/base.rc.sh
+source ~/.zsh/conf.d/common/prompt.rc.sh
 case ${OSTYPE} in
   darwin*)
-    source ~/.zsh/user_autoload/osx/base.rc.sh
+    source ~/.zsh/conf.d/darwin/base.rc.sh
     ;;
   linux*)
-    source ~/.zsh/user_autoload/linux/base.rc.sh
+    source ~/.zsh/conf.d/linux/base.rc.sh
     ;;
   cygwin*)
-    source ~/.zsh/user_autoload/cygwin/base.sh
+    source ~/.zsh/conf.d/cygwin/base.sh
     ;;
   msys*)
-    source ~/.zsh/user_autoload/msys/base.sh
+    source ~/.zsh/conf.d/msys/base.sh
     ;;
   *)
-    echo "Skip to load settings for specified OS"
+    ;;
 esac
-source ~/.zsh/user_autoload/common/comp.rc.sh
+source ~/.zsh/conf.d/common/comp.rc.sh
+for file in "~/.zsh/local/"*.rc.sh(Nn); do
+  source "$file"
+done

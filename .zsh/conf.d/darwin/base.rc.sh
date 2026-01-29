@@ -5,9 +5,8 @@ alias vi=vim
 ssh-add -K &> /dev/null
 
 if type 'brew' > /dev/null 2>&1; then
-  source ~/.zsh/user_autoload/osx/homebrew.rc.sh
+  source ~/.zsh/conf.d/darwin/homebrew.rc.sh
 fi
-source ~/.zsh/user_autoload/osx/clipctl.rc.sh
-source ~/.zsh/user_autoload/osx/pkgctl.sh
+source ~/.zsh/conf.d/darwin/function.rc.sh
 
 typeset -U sudo_path
