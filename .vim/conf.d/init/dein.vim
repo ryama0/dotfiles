@@ -18,7 +18,7 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   " toml をロード 
-  let g:dein_plugins_dir    = expand('~/.vim/user_autoload/dein')
+  let g:dein_plugins_dir    = expand('~/.vim/conf.d/dein')
   let s:base_toml      = g:dein_plugins_dir . '/base.toml'
   let s:base_lazy_toml = g:dein_plugins_dir . '/base.lazy.toml'
 

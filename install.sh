@@ -43,7 +43,7 @@ create_link "$DOTFILES_PATH/.gvimrc" ~/.gvimrc
 if [ ! -d ~/.vim ]; then
   mkdir ~/.vim
 fi
-create_link "$DOTFILES_PATH/vim_user_autoload" ~/.vim/user_autoload
+create_link "$DOTFILES_PATH/.vim/conf.d" ~/.vim/conf.d
 
 #tmux
 create_link "$DOTFILES_PATH/.tmux.conf" ~/.tmux.conf
