@@ -47,7 +47,7 @@ create_link "$DOTFILES_PATH/vim_user_autoload" ~/.vim/user_autoload
 
 #tmux
 create_link "$DOTFILES_PATH/.tmux.conf" ~/.tmux.conf
-create_link "$DOTFILES_PATH/.tmux.d" ~/.tmux.d
+create_link "$DOTFILES_PATH/.tmux" ~/.tmux
 
 # alacritty
 create_link "$DOTFILES_PATH/.config/alacritty" ~/.config/alacritty

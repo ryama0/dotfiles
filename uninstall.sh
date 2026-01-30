@@ -23,7 +23,7 @@ remove_link ~/.gvimrc
 rm -rf ~/.vim
 # tmux
 remove_link ~/.tmux.conf
-remove_link ~/.tmux.d
+remove_link ~/.tmux
 # alacritty
 remove_link ~/.config/alacritty
 remove_link ~/.alacritty.toml
