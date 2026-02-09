@@ -43,3 +43,6 @@ fi
 
 source ~/.zsh/conf.d/linux/function.rc.sh
 source ~/.zsh/conf.d/linux/1password.rc.sh
+
+# mise
+source ~/.zsh/conf.d/common/mise.rc.sh

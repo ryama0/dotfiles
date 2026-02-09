@@ -10,3 +10,6 @@ fi
 source ~/.zsh/conf.d/darwin/function.rc.sh
 
 typeset -U sudo_path
+
+# mise
+source ~/.zsh/conf.d/common/mise.rc.sh
