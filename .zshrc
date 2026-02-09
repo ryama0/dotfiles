@@ -20,6 +20,6 @@ case ${OSTYPE} in
     ;;
 esac
 source ~/.zsh/conf.d/common/comp.rc.sh
-for file in "~/.zsh/local/"*.rc.sh(Nn); do
+for file in ~/.zsh/local/*.rc.sh(Nn); do
   source "$file"
 done
