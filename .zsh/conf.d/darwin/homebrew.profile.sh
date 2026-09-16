@@ -3,6 +3,7 @@ typeset -gU PKG_CONFIG_PATH pkg_config_path
 HOMEBREW_PREFIX=`brew --prefix`
 export path=(
     $HOMEBREW_PREFIX/bin(N-/)
+    $HOMEBREW_PREFIX/opt/mysql-client/bin(N-/)
     $path
 )
 export pkg_config_path=(
