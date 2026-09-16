@@ -3,3 +3,5 @@
 	email = dev@ryama0.net
 [grep]
 	lineNumber = true
+[core]
+	quotepath = false
